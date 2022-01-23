@@ -33,7 +33,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     int seekBarProgress = 10;
     DoubleFFT_1D fft = new DoubleFFT_1D(bufSize);
 
-    int[] Base_Hz = {0, 1, 2, 3, 7, 13, 25, 48, 94, 187, 373, 511};
+    int[] Base_Hz = {0, 2, 4, 6, 14, 26, 50, 96, 188, 374, 746, 1024};
+    int[] Base_Hz_sub = {0, 1, 2, 3, 7, 13, 25, 48, 94, 187, 373, 511};
     double[] vol_ary = {0.5, 0.526, 0.555, 0.588, 0.625, 0.666, 0.714, 0.769, 0.833, 0.909,
                         1.0,
                         1.1, 1.2,   1.3,   1.4,   1.5,   1.6,   1.7,   1.8,   1.9,   2.0};
@@ -386,11 +387,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         // フーリエ変換
         fft.realForward(buf);
 
-        //for (i = 0; i < 11; i++) {
-        //    for (j = Base_Hz[i] + 1; j <= Base_Hz[i + 1]; j++) {
-        //        buf[j] *= vol[i];
-        //    }
-        //}
+        for (i = 0; i < 10; i++) {
+            for (j = Base_Hz[i] + 1; j <= Base_Hz[i + 1]; j++) {
+                buf[j] *= vol[i];
+            }
+        }
 
         // 逆フーリエ変換
         fft.realInverse(buf, true);
