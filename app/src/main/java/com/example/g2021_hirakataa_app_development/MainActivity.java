@@ -2,7 +2,6 @@ package com.example.g2021_hirakataa_app_development;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import org.jtransforms.fft.DoubleFFT_1D;
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.media.AudioFormat;
@@ -18,13 +17,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
-import android.widget.TextView;
+
+import org.jtransforms.fft.DoubleFFT_1D;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     AudioRecord audioRec = null;
     AudioTrack player = null;
     Button btn = null;
-    TextView mText;
 
     private static final int PERMISSION_RECORD_AUDIO = 1;
     final static int SAMPLING_RATE = 44100;
@@ -37,9 +36,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     double[] vol_ary = {0.5, 0.526, 0.555, 0.588, 0.625, 0.666, 0.714, 0.769, 0.833, 0.909,
             1.0,
             1.1, 1.2,   1.3,   1.4,   1.5,   1.6,   1.7,   1.8,   1.9,   2.0};
-    String[] vol_str = {"-10", "-9", "-8", "-7", "-6", "-5", "-4", "-3", "-2", "-1",
-            "0",
-            "1",  "2",  "3",  "4",  "5",  "6",  "7",  "8",  "9", "10"};
     double vol = vol_ary[0];
 
     /** Called when the activity is first created. */
@@ -53,9 +49,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btn = findViewById(R.id.button_id);
         btn.setText(R.string.stopping_label);
         btn.setOnClickListener(this);
-
-        mText = findViewById(R.id.textView);
-        mText.setText(R.string.stopping_label);
 
         // AudioRecordの作成
         audioRec = new AudioRecord(

@@ -2,4 +2,5 @@
     <string name="app_name">AudioRecordTest2</string>
     <string name="stopping_label">Stopping</string>
     <string name="running_label">Running</string>
+    <string name="tmp">Text</string>
 </resources>
