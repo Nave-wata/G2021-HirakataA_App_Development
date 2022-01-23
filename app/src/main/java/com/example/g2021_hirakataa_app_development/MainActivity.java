@@ -47,7 +47,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
 
         btn = findViewById(R.id.button_id);
-        btn.setText(R.string.stopping_label);
         btn.setOnClickListener(this);
 
         // AudioRecordの作成
@@ -69,7 +68,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         );
 
         // SeekBarのインスタンスを取得
-        SeekBar seekBar = findViewById(R.id.seekBar);
+        SeekBar seekBar = findViewById(R.id.seekBar_1);
         seekBar.setMax(seekBarMax);
         seekBar.setProgress(seekBarProgress);
         // SeekBarのつまみの変更を検知する

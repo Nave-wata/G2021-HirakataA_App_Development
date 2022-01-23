@@ -2,5 +2,16 @@
     <string name="app_name">AudioRecordTest2</string>
     <string name="stopping_label">Stopping</string>
     <string name="running_label">Running</string>
-    <string name="tmp">Text</string>
+    <string name="max_Hz">+10</string>
+    <string name="min_Hz">-10</string>
+    <string name="Hz_1">43</string>
+    <string name="Hz_2">86</string>
+    <string name="Hz_3">129</string>
+    <string name="Hz_4">258</string>
+    <string name="Hz_5">516</string>
+    <string name="Hz_6">1033</string>
+    <string name="Hz_7">2024</string>
+    <string name="Hz_8">4005</string>
+    <string name="Hz_9">8010</string>
+    <string name="Hz_10">16020</string>
 </resources>

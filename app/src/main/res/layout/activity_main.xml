@@ -11,6 +11,7 @@
         android:layout_width="109dp"
         android:layout_height="57dp"
         android:rotation="90"
+        android:text="@string/stopping_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -20,31 +21,289 @@
         tools:ignore="MissingConstraints" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/seekBar_1"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="197dp"
         android:layout_height="26dp"
-        android:max="10"
-        android:progress="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_id"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintVertical_bias="0.150" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="90"
-        android:text="@string/tmp"
+        android:text="@string/Hz_1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/seekBar"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_1"
         app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117" />
+        app:layout_constraintVertical_bias="0.150" />
+
+    <SeekBar
+        android:id="@+id/seekBar_2"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="197dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_id"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.230" />
+
+    <TextView
+        android:id="@+id/textView_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:text="@string/Hz_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_1"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.230" />
+
+    <SeekBar
+        android:id="@+id/seekBar_3"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="197dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_id"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.310" />
+
+    <TextView
+        android:id="@+id/textView_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:text="@string/Hz_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_1"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.310" />
+
+    <SeekBar
+        android:id="@+id/seekBar_4"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="197dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_id"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.390" />
+
+    <TextView
+        android:id="@+id/textView_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:text="@string/Hz_4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_1"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.390" />
+
+    <SeekBar
+        android:id="@+id/seekBar_5"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="197dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_id"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.470" />
+
+    <TextView
+        android:id="@+id/textView_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:text="@string/Hz_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_1"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.470" />
+
+    <SeekBar
+        android:id="@+id/seekBar_6"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="197dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_id"
+        app:layout_constraintHorizontal_bias="0.844"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.550" />
+
+    <TextView
+        android:id="@+id/textView_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:text="@string/Hz_6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_1"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.550" />
+
+    <SeekBar
+        android:id="@+id/seekBar_7"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="197dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_id"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.630" />
+
+    <TextView
+        android:id="@+id/textView_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:text="@string/Hz_7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_1"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.630" />
+
+    <SeekBar
+        android:id="@+id/seekBar_8"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="197dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_id"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.710" />
+
+    <TextView
+        android:id="@+id/textView_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:text="@string/Hz_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_1"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.710" />
+
+    <SeekBar
+        android:id="@+id/seekBar_9"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="197dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_id"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.790" />
+
+    <TextView
+        android:id="@+id/textView_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:text="@string/Hz_9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_1"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.790" />
+
+    <SeekBar
+        android:id="@+id/seekBar_10"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="197dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_id"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.870" />
+
+    <TextView
+        android:id="@+id/textView_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:text="@string/Hz_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar_1"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.870" />
+
+    <TextView
+        android:id="@+id/max_Hz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:text="@string/max_Hz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.643"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.096" />
+
+    <TextView
+        android:id="@+id/min_Hz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:rotation="90"
+        android:text="@string/min_Hz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.095"
+        tools:ignore="UnknownId" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
 
 </android.support.constraint.ConstraintLayout>
