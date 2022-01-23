@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">G2021-HirakataA_App_Development</string>
+    <string name="app_name">AudioRecordTest2</string>
+    <string name="stopping_label">Stopping</string>
+    <string name="running_label">Running</string>
 </resources>
