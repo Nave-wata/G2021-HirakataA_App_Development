@@ -386,11 +386,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         // フーリエ変換
         fft.realForward(buf);
 
-        for (i = 0; i < 11; i++) {
-            for (j = Base_Hz[i] + 1; j <= Base_Hz[i + 1]; j++) {
-                buf[j] *= vol[i];
-            }
-        }
+        //for (i = 0; i < 11; i++) {
+        //    for (j = Base_Hz[i] + 1; j <= Base_Hz[i + 1]; j++) {
+        //        buf[j] *= vol[i];
+        //    }
+        //}
 
         // 逆フーリエ変換
         fft.realInverse(buf, true);
