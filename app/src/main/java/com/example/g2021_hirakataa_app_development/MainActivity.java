@@ -420,6 +420,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         fft.realInverse(buf, true);
 
         for (i = 0; i < bufSize; i++) {
+            if (120 < buf[i]) {
+                Log.v("i", "" + i + ", buf = " + buf[i]);
+            }
+            if (buf[i] < -120) {
+                Log.v("i", "" + i + ", buf = " + buf[i]);
+            }
             outputBuffer[i] = (byte)buf[i];
         }
 
