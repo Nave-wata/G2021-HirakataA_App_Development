@@ -378,39 +378,41 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected byte[] Amplification(byte[] inputBuffer) {
         double[] buf = new double[bufSize];
         byte[] outputBuffer = new byte[bufSize];
-        int i, j;
+        int i;
 
         for (i = 0; i < bufSize; i++) {
-            buf[i] = (double)inputBuffer[i];
+            buf[i] = inputBuffer[i];
         }
 
         // フーリエ変換
         fft.realForward(buf);
 
-        buf[1] *= vol[0];
-        buf[2] *= vol[1];
-        for (i = 3; i <= 5; i++) {
+        buf[2] *= vol[0];
+        buf[3] *= vol[0];
+        buf[4] *= vol[1];
+        buf[5] *= vol[1];
+        for (i = 6; i <= 11; i++) {
             buf[i] *= vol[2];
         }
-        for (i = 6; i <= 9; i++) {
+        for (i = 12; i <= 19; i++) {
             buf[i] *= vol[3];
         }
-        for (i = 10; i <= 18; i++) {
+        for (i = 20; i <= 37; i++) {
             buf[i] *= vol[4];
         }
-        for (i = 19; i <= 36; i++) {
+        for (i = 38; i <= 73; i++) {
             buf[i] *= vol[5];
         }
-        for (i = 37; i <= 70; i++) {
+        for (i = 74; i <= 141; i++) {
             buf[i] *= vol[6];
         }
-        for (i = 71; i <= 135; i++) {
+        for (i = 142; i <= 271; i++) {
             buf[i] *= vol[7];
         }
-        for (i = 136; i <= 230; i++) {
+        for (i = 272; i <= 461; i++) {
             buf[i] *= vol[8];
         }
-        for (i = 231; i <= 511; i++) {
+        for (i = 462; i <= 1023; i++) {
             buf[i] *= vol[9];
         }
 
