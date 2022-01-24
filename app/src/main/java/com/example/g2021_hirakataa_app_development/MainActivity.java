@@ -387,10 +387,31 @@ public class MainActivity extends Activity implements View.OnClickListener {
         // フーリエ変換
         fft.realForward(buf);
 
-        for (i = 0; i < 10; i++) {
-            for (j = Base_Hz[i] + 1; j <= Base_Hz[i + 1]; j++) {
-                buf[j] *= vol[i];
-            }
+        buf[1] *= vol[0];
+        buf[2] *= vol[1];
+        for (i = 3; i <= 5; i++) {
+            buf[i] *= vol[2];
+        }
+        for (i = 6; i <= 9; i++) {
+            buf[i] *= vol[3];
+        }
+        for (i = 10; i <= 18; i++) {
+            buf[i] *= vol[4];
+        }
+        for (i = 19; i <= 36; i++) {
+            buf[i] *= vol[5];
+        }
+        for (i = 37; i <= 70; i++) {
+            buf[i] *= vol[6];
+        }
+        for (i = 71; i <= 135; i++) {
+            buf[i] *= vol[7];
+        }
+        for (i = 136; i <= 230; i++) {
+            buf[i] *= vol[8];
+        }
+        for (i = 231; i <= 511; i++) {
+            buf[i] *= vol[9];
         }
 
         // 逆フーリエ変換
