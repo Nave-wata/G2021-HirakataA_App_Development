@@ -382,6 +382,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         for (i = 0; i < bufSize; i++) {
             buf[i] = inputBuffer[i];
+            buf[i] /= 2;
         }
 
         // フーリエ変換
