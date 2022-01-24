@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 
 import org.jtransforms.fft.DoubleFFT_1D;
+import java.util.ArrayList;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     AudioRecord audioRec = null;
@@ -31,6 +32,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     int bufSize = 1024;
     int seekBarMax = 20;
     int seekBarProgress = 10;
+    int cnt = 0;
     DoubleFFT_1D fft = new DoubleFFT_1D(bufSize);
 
     int[] Base_Hz = {0, 2, 4, 6, 14, 26, 50, 96, 188, 374, 746, 1024};
@@ -74,265 +76,42 @@ public class MainActivity extends Activity implements View.OnClickListener {
         );
 
         // SeekBarのインスタンスを取得
-        SeekBar seekBar1 = findViewById(R.id.seekBar_1);
-        seekBar1.setMax(seekBarMax);
-        seekBar1.setProgress(seekBarProgress);
-        SeekBar seekBar2 = findViewById(R.id.seekBar_2);
-        seekBar2.setMax(seekBarMax);
-        seekBar2.setProgress(seekBarProgress);
-        SeekBar seekBar3 = findViewById(R.id.seekBar_3);
-        seekBar3.setMax(seekBarMax);
-        seekBar3.setProgress(seekBarProgress);
-        SeekBar seekBar4 = findViewById(R.id.seekBar_4);
-        seekBar4.setMax(seekBarMax);
-        seekBar4.setProgress(seekBarProgress);
-        SeekBar seekBar5 = findViewById(R.id.seekBar_5);
-        seekBar5.setMax(seekBarMax);
-        seekBar5.setProgress(seekBarProgress);
-        SeekBar seekBar6 = findViewById(R.id.seekBar_6);
-        seekBar6.setMax(seekBarMax);
-        seekBar6.setProgress(seekBarProgress);
-        SeekBar seekBar7 = findViewById(R.id.seekBar_7);
-        seekBar7.setMax(seekBarMax);
-        seekBar7.setProgress(seekBarProgress);
-        SeekBar seekBar8 = findViewById(R.id.seekBar_8);
-        seekBar8.setMax(seekBarMax);
-        seekBar8.setProgress(seekBarProgress);
-        SeekBar seekBar9 = findViewById(R.id.seekBar_9);
-        seekBar9.setMax(seekBarMax);
-        seekBar9.setProgress(seekBarProgress);
-        SeekBar seekBar10 = findViewById(R.id.seekBar_10);
-        seekBar10.setMax(seekBarMax);
-        seekBar10.setProgress(seekBarProgress);
+        ArrayList<SeekBar> seekbars = new ArrayList<SeekBar>();
 
-        // SeekBarのつまみの変更を検知する
-        seekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // つまみが変更された時に処理が実行される
-                vol[0] = vol_ary[progress];
-                Log.v("SeekBar1", "progress" + vol[0]);
-            }
+        seekbars.add(findViewById(R.id.seekBar_1));
+        seekbars.add(findViewById(R.id.seekBar_2));
+        seekbars.add(findViewById(R.id.seekBar_3));
+        seekbars.add(findViewById(R.id.seekBar_4));
+        seekbars.add(findViewById(R.id.seekBar_5));
+        seekbars.add(findViewById(R.id.seekBar_6));
+        seekbars.add(findViewById(R.id.seekBar_7));
+        seekbars.add(findViewById(R.id.seekBar_8));
+        seekbars.add(findViewById(R.id.seekBar_9));
+        seekbars.add(findViewById(R.id.seekBar_10));
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ開始した時に処理が実行される
-            }
+        cnt = 0;
+        for (SeekBar sb : seekbars) {
+            sb.setMax(seekBarMax);
+            sb.setProgress(seekBarProgress);
+            sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    // つまみが変更された時に処理が実行される
+                    vol[cnt] = vol_ary[progress];
+                    Log.v("SeekBar1", "progress" + vol[0]);
+                }
 
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ終了した時に処理が実行される
-            }
-        });
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+                    // ユーザーがタップ開始した時に処理が実行される
+                }
 
-
-        // SeekBarのつまみの変更を検知する
-        seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // つまみが変更された時に処理が実行される
-                vol[1] = vol_ary[progress];
-                Log.v("SeekBar2", "progress" + vol[1]);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ開始した時に処理が実行される
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ終了した時に処理が実行される
-            }
-        });
-
-
-        // SeekBarのつまみの変更を検知する
-        seekBar3.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // つまみが変更された時に処理が実行される
-                vol[2] = vol_ary[progress];
-                Log.v("SeekBar3", "progress" + vol[2]);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ開始した時に処理が実行される
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ終了した時に処理が実行される
-            }
-        });
-
-
-        // SeekBarのつまみの変更を検知する
-        seekBar4.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // つまみが変更された時に処理が実行される
-                vol[3] = vol_ary[progress];
-                Log.v("SeekBar4", "progress" + vol[3]);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ開始した時に処理が実行される
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ終了した時に処理が実行される
-            }
-        });
-
-
-        // SeekBarのつまみの変更を検知する
-        seekBar5.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // つまみが変更された時に処理が実行される
-                vol[4] = vol_ary[progress];
-                Log.v("SeekBar5", "progress" + vol[4]);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ開始した時に処理が実行される
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ終了した時に処理が実行される
-            }
-        });
-
-
-        // SeekBarのつまみの変更を検知する
-        seekBar6.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // つまみが変更された時に処理が実行される
-                vol[5] = vol_ary[progress];
-                Log.v("SeekBar6", "progress" + vol[5]);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ開始した時に処理が実行される
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ終了した時に処理が実行される
-            }
-        });
-
-
-        // SeekBarのつまみの変更を検知する
-        seekBar7.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // つまみが変更された時に処理が実行される
-                vol[6] = vol_ary[progress];
-                Log.v("SeekBar7", "progress" + vol[6]);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ開始した時に処理が実行される
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ終了した時に処理が実行される
-            }
-        });
-
-
-        // SeekBarのつまみの変更を検知する
-        seekBar8.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // つまみが変更された時に処理が実行される
-                vol[7] = vol_ary[progress];
-                Log.v("SeekBar8", "progress" + vol[7]);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ開始した時に処理が実行される
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ終了した時に処理が実行される
-            }
-        });
-
-
-        // SeekBarのつまみの変更を検知する
-        seekBar9.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // つまみが変更された時に処理が実行される
-                vol[8] = vol_ary[progress];
-                Log.v("SeekBar9", "progress" + vol[8]);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ開始した時に処理が実行される
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ終了した時に処理が実行される
-            }
-        });
-
-
-        // SeekBarのつまみの変更を検知する
-        seekBar10.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // つまみが変更された時に処理が実行される
-                vol[9] = vol_ary[progress];
-                Log.v("SeekBar10", "progress" + vol[9]);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ開始した時に処理が実行される
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // ユーザーがタップ終了した時に処理が実行される
-            }
-        });
-
-        checkRecordable();
-    }
-
-    @SuppressLint("ObsoleteSdkInt")
-    public void checkRecordable(){
-        if(!SpeechRecognizer.isRecognitionAvailable(getApplicationContext())) {
-            return;
-        }
-        if (Build.VERSION.SDK_INT >= 23) {
-            if(ActivityCompat.checkSelfPermission(this,
-                    Manifest.permission.RECORD_AUDIO)
-                    != PackageManager.PERMISSION_GRANTED)
-            {
-                ActivityCompat.requestPermissions(this,
-                        new String[]{
-                                Manifest.permission.RECORD_AUDIO
-                        },
-                        PERMISSION_RECORD_AUDIO);
-            }
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+                    // ユーザーがタップ終了した時に処理が実行される
+                }
+            });
+            cnt += 1;
         }
     }
 
